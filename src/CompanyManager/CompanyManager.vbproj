@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CompanyManager</RootNamespace>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>CompanyManager</AssemblyName>
+  </PropertyGroup>
+
+</Project>
