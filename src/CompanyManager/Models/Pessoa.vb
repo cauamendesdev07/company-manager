@@ -21,4 +21,8 @@
         Return Email
     End Function
 
+    Public Overrides Function ToString() As String
+        Return $"Nome: {Nome}" & vbCrLf & $"Idade: {Idade}" & vbCrLf & $"Email: {Email}"
+    End Function
+
 End Class

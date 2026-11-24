@@ -24,5 +24,16 @@ Module Program
         Console.WriteLine("CNPJ: " & dadosEmpresa.CNPJ)
         Console.WriteLine("Endereço: " & dadosEmpresa.Endereco)
 
+        Dim cliente As New Cliente("Cliente 1", 20, "cauamendes.dev@gmail.com", dadosEmpresa.CodigoEmpresa)
+
+        Console.WriteLine("Dados dos clientes")
+        Console.WriteLine("Nome:" & cliente.GetNome())
+        Console.WriteLine("Email:" & cliente.GetEmail())
+        Console.WriteLine("Idade:" & cliente.GetIdade())
+        Console.WriteLine("CodCliente:" & cliente.GetIdade())
+        Console.WriteLine("DataCadastro:" & cliente.GetIdade())
+        Console.WriteLine("Empresa:" & cliente.GetIdade())
+        Console.WriteLine("Empresa:" & cliente.GetIdade())
+
     End Sub
 End Module
