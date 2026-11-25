@@ -45,7 +45,7 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return MyBase.ToString() & $"Cadastro: {DataCadastro}" & vbCrLf & $"Ativo: {Ativo}" & vbCrLf & $"Empresa: {Empresa}"
+        Return MyBase.ToString() & vbCrLf & $"Cadastro: {DataCadastro}" & vbCrLf & $"Ativo: {Ativo}" & vbCrLf & $"Empresa: {Empresa}"
     End Function
 
 End Class
