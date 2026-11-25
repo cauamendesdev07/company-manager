@@ -46,15 +46,6 @@ Public Class Empresa
         End Set
     End Property
 
-    Public Property Clientes As List(Of Cliente)
-        Get
-            Return _clientes
-        End Get
-        Set(value As List(Of Cliente))
-            _clientes = value
-        End Set
-    End Property
-
     Public ReadOnly Property CodigoEmpresa As Integer
         Get
             Return _codigoEmpresa
@@ -64,4 +55,35 @@ Public Class Empresa
     Public Overrides Function ToString() As String
         Return vbCrLf & $"Nome: {Nome}" & vbCrLf & $"CNPJ: {Cnpj}" & vbCrLf & $"Endereço: {Endereco}"
     End Function
+
+    Public Function AddCliente(cliente As Cliente) As String
+        Try
+            If cliente.Empresa <> Me.CodigoEmpresa Then
+                Return vbCrLf & "O cliente não pertence a essa empresa!"
+            End If
+
+            Me._clientes.Add(cliente)
+            Return vbCrLf & "Cliente cadastrado com sucesso na empresa!"
+        Catch ex As Exception
+            Return (vbCrLf & "Não foi possivel cadastrar o cliente! " & vbCrLf & "Erro: " & ex.Message)
+        End Try
+    End Function
+
+    Public Function RemoverCliente(cliente As Cliente) As String
+        Try
+            If Not _clientes.Contains(cliente) Then
+                Return vbCrLf & "O cliente não pertence a essa empresa!"
+            End If
+
+            _clientes.Remove(cliente)
+            Return vbCrLf & "Cliente removido com sucesso!"
+        Catch ex As Exception
+            Return (vbCrLf & "Não foi possivel remover o cliente! " & vbCrLf & "Erro: " & ex.Message)
+        End Try
+    End Function
+
+    Public Function ListarClientes() As IReadOnlyList(Of Cliente)
+        Return _clientes.AsReadOnly()
+    End Function
+
 End Class
