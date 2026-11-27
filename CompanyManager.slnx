@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/CompanyManager/CompanyManager.vbproj" />
+  <Project Path="tests/CompanyManager.Tests/CompanyManager.Tests.vbproj" />
+</Solution>
