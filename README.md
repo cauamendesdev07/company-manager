@@ -8,6 +8,7 @@ O projeto tem como objetivo desenvolver uma aplicação de forma incremental, ap
 
 - VB.NET
 - .NET
+- MSTest
 - Visual Studio
 
 ## Estrutura do Projeto
@@ -24,7 +25,16 @@ CompanyManager/
 │       ├── Program.vb
 │       └── CompanyManager.vbproj
 │
+├── tests/
+│   └── CompanyManager.Tests/
+│       ├── PessoaTests.vb
+│       ├── ClienteTests.vb
+│       ├── EmpresaTests.vb
+│       ├── MSTestSettings.vb
+│       └── CompanyManager.Tests.vbproj
+│
 ├── .gitignore
+├── CompanyManager.slnx
 └── README.md
 ```
 
@@ -40,6 +50,21 @@ CompanyManager/
 - [x] Geração automática de códigos sequenciais para clientes.
 - [x] Controle de data de cadastro e situação (ativo/inativo) dos clientes.
 - [x] Consulta de informações através de propriedades e métodos.
+- [x] Testes automatizados das classes `Pessoa`, `Cliente` e `Empresa` com MSTest.
+
+## Testes
+
+Os testes automatizados ficam no projeto independente `CompanyManager.Tests`, desenvolvido com **MSTest**, e estão organizados por classe:
+
+- `PessoaTests`: construtor, propriedades e `ToString()`.
+- `ClienteTests`: herança de `Pessoa`, código sequencial, data de cadastro, situação e `ToString()`.
+- `EmpresaTests`: construtor, código sequencial, cadastro, remoção e listagem de clientes e `ToString()`.
+
+Para executar os testes, a partir da raiz do repositório:
+
+```bash
+dotnet test CompanyManager.slnx
+```
 
 ## Desenvolvimento
 
